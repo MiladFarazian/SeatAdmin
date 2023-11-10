@@ -12,14 +12,14 @@ body {
 
 /* Style the header/navigation bar */
 header {
-    background-color: #333;
+    background-color: #341fd2;
     color: #fff;
     padding: 10px 0;
 }
 
 header nav ul {
     list-style: none;
-    text-align: center;
+    text-align: right;
 }
 
 header nav ul li {
@@ -33,15 +33,32 @@ header nav ul li a {
     font-weight: bold;
 }
 
+header nav ul #title{
+    text-align: right;
+}
+
 /* Style the hero section */
 .hero {
-    text-align: center;
+    text-align: left;
     padding: 40px;
+    padding-bottom: 250px;
 }
 
 .hero h1 {
     font-size: 36px;
     margin-bottom: 20px;
+}
+
+.opening{
+    background-color: #341fd2;
+    color: #fff;
+    padding: 10px 0px;
+    padding-bottom: 500px;
+}
+
+.search{
+    text-align: center;
+    padding-bottom: 50px;
 }
 
 /* Style event cards */

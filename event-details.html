@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Details</title>
+        <!-- Add any stylesheets or scripts here -->
+    </head>
+    <body>
+        <h1 id="event-title"></h1>
+        <!-- Other content can go here -->
+        <script>
+            // Parse the query string to get the event title
+            function getQueryStringParameter(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Set the event title to the h1 tag
+            document.getElementById('event-title').textContent = decodeURIComponent(getQueryStringParameter('title'));
+        </script>
+    </body>
+</html>

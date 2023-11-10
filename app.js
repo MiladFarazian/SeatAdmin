@@ -31,7 +31,6 @@ function getNumberSuffix(day) {
 }
 
 
-
 // Function to populate event cards
 function populateEventCards(eventsData) {
     const eventSection = document.querySelector('.events');
@@ -59,6 +58,12 @@ function populateEventCards(eventsData) {
 
         const buyButton = document.createElement('button');
         buyButton.textContent = 'Buy Tickets';
+        //buyButton.href = `event-details.html?title=${encodeURIComponent(event.title)}`; // Point to new HTML page with title parameter
+        //buyButton.target = '_blank'; // Open link in new tab
+        buyButton.addEventListener('click', function() {
+            // Open the new page with the event details on button click
+            window.open(`event-details.html?title=${encodeURIComponent(event.title)}`, '_blank');
+        });
 
         // Append event details and image to the event card
         eventCard.appendChild(eventImage);
