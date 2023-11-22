@@ -33,7 +33,7 @@ function getNumberSuffix(day) {
 
 // Function to populate event cards
 function populateEventCards(eventsData) {
-    const eventSection = document.querySelector('.events');
+    const eventSection = document.querySelector('.event-cards');
     eventSection.innerHTML = ''; // Clear existing event cards
 
     eventsData.forEach((event) => {
@@ -56,21 +56,18 @@ function populateEventCards(eventsData) {
         const eventLocation = document.createElement('p');
         eventLocation.textContent = `Location: ${event.venue.display_location}`; // Use the 'venue.display_location' field
 
-        const buyButton = document.createElement('button');
-        buyButton.textContent = 'Buy Tickets';
-        //buyButton.href = `event-details.html?title=${encodeURIComponent(event.title)}`; // Point to new HTML page with title parameter
-        //buyButton.target = '_blank'; // Open link in new tab
-        buyButton.addEventListener('click', function() {
-            // Open the new page with the event details on button click
-            window.open(`event-details.html?title=${encodeURIComponent(event.title)}`, '_blank');
-        });
+
 
         // Append event details and image to the event card
         eventCard.appendChild(eventImage);
         eventCard.appendChild(eventTitle);
         eventCard.appendChild(eventDate);
         eventCard.appendChild(eventLocation);
-        eventCard.appendChild(buyButton);
+
+        eventCard.addEventListener('click', function() {
+            // Open the new page with the event details on button click
+            window.open(`event-details.html?title=${encodeURIComponent(event.title)}`, '_blank');
+        });
 
         // Append the event card to the events section
         eventSection.appendChild(eventCard);
@@ -184,3 +181,26 @@ nextButton.addEventListener('click', () => {
 
 // Initial setup
 updateNavigation();
+
+function checkFooterPosition() {
+    const contentHeight = document.body.offsetHeight;
+    const viewportHeight = window.innerHeight;
+
+    if (contentHeight < viewportHeight) {
+        // If the content is not tall enough, adjust footer to be at the bottom
+        document.querySelector('footer').style.position = 'absolute';
+        document.querySelector('footer').style.bottom = '0';
+        document.querySelector('footer').style.width = '100%';
+    } else {
+        // If the content is tall enough, let the footer be in normal flow
+        document.querySelector('footer').style.position = 'static';
+    }
+}
+
+// Call this function after you load or change content
+populateEventCards(eventsData);
+checkFooterPosition();
+
+// Also call this function on window resize to handle dynamic changes in viewport size
+window.addEventListener('resize', checkFooterPosition);
+

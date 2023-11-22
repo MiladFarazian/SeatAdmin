@@ -8,58 +8,42 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <nav>
-            <ul>
-                <li><a class="float_left" href="">SeatAdmin</a></li>
-                <li><a class="float_right" href="#">Schedule</a></li>
-                <li><a class="float_right" href="#">Tickets</a></li>
-                <li><a class="float_right" href="#">Contact</a></li>
-                <li><a class="float_right" href="#">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="opening">
-        <!-- Hero Section -->
-        <section></section>
-        </section>
-        <!-- Search Section -->
-        <section>
-            
-            <p class="search" >Find and purchase tickets for your favorite events.</p>
-            <form id="search-form">                
-                <input type="text" id="search-input" placeholder="Search events...">
-                <button type="submit">Search</button>
-            </form>
+    <section class="opening_background_image">
+        <header>
+            <nav>
+                <div class="label"><img class="seat-admin" src="img/seat-admin.png" /></div>
+                <ul class="nav-links">
+                    <li><a href="#">Schedule</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="opening">
+            <!-- Hero Section -->
+            <section class="hero">
+                 <section>
+                    <span><h2 style='display:inline;'>Welcome to</h2><img src='img/seat-admin.png' /></span>
+                    <br></br>
+                    <p class="search" >Find and purchase tickets for your favorite events.</p>
+                    <form id="search-form">                
+                        <input type="text" id="search-input" placeholder="Search events...">
+                        <button type="submit">Search</button>
+                    </form>
+                </section>
+            </section>
+            </section>
+            <!-- Search Section -->
+           
         </section>
     </section>
     
-
-    <!-- Events Section -->
     <section class="events">
         <h1>Popular Events</h1>
-        <div class="event-cards-container">
-            <!-- Event Cards go here -->
-            
-        </div>
-    
-        <div class="pagination">
-            <button class="prev-btn" disabled>&lt; Previous</button>
-            <button class="next-btn">Next &gt;</button>
-        </div>
-    </section>
+        <section class="event-cards">
 
-    
-    <section class="events">
-        <!-- Event Cards go here -->
-        <!--div class="event-card">
-            <img class="event-image" src="event-image.jpg" alt="Event Image">
-            <h2>Event Title</h2>
-            <p>Date: Event Date</p>
-            <p>Location: Event Location</p>
-            <button>Buy Tickets</button>
-        </div-->
+        </section>
     </section>
 
     <!-- Footer Section -->

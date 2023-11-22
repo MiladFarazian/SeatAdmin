@@ -1,22 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Event Details</title>
-        <!-- Add any stylesheets or scripts here -->
-    </head>
-    <body>
-        <h1 id="event-title"></h1>
-        <!-- Other content can go here -->
-        <script>
-            // Parse the query string to get the event title
-            function getQueryStringParameter(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0b2033; /* Dark blue header */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+            color: #0b2033; /* Dark blue for title */
+            text-align: center;
+        }
+
+        .event-details {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .listing {
+            flex: 1;
+            margin-right: 20px; /* Spacing between sections */
+        }
+
+        .map {
+            flex: 1;
+            height: 400px; /* Adjust height as needed */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
             }
 
-            // Set the event title to the h1 tag
-            document.getElementById('event-title').textContent = decodeURIComponent(getQueryStringParameter('title'));
-        </script>
-    </body>
+            .listing, .map {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Additional styling can go here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Event Details</h1>
+    </header>
+
+    <div class="event-details">
+        <h2 id="event-title"></h2>
+        <!-- Other content can go here -->
+    </div>
+
+    <div class="container">
+        <div class="listing">
+            <!-- Event listing content goes here -->
+        </div>
+        <div class="map">
+            <!-- Interactive map goes here -->
+            <!-- Example: <iframe src="URL_OF_YOUR_MAP"></iframe> -->
+        </div>
+    </div>
+
+    <script>
+        // Parse the query string to get the event title
+        function getQueryStringParameter(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set the event title to the h2 tag
+        document.getElementById('event-title').textContent = decodeURIComponent(getQueryStringParameter('title'));
+    </script>
+</body>
 </html>

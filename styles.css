@@ -11,11 +11,38 @@ body {
 }
 
 /* Style the header/navigation bar */
+/* Updated Header and Nav CSS */
 header {
-    background-color: #341fd2;
+    /*background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(61, 55, 241, 0.45) 100%);*/
     color: #fff;
     padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
+header .nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header .nav-links li :hover {
+    font-family: rubikGlitch;
+}
+
 
 header nav ul {
     list-style: none;
@@ -38,10 +65,22 @@ header nav ul #title{
 }
 
 /* Style the hero section */
+
+/* Hero Section */
+.opening_background_image{
+    background-image: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(61, 55, 241, 0.45) 100%), url('img/opening.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 .hero {
-    text-align: left;
-    padding: 40px;
-    padding-bottom: 250px;
+    background-size: cover;
+    image-resolution: from-image;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    padding-bottom: 500px;
 }
 
 .hero h1 {
@@ -50,19 +89,22 @@ header nav ul #title{
 }
 
 .opening{
-    background-color: #341fd2;
     color: #fff;
     padding: 10px 0px;
-    padding-bottom: 500px;
 }
 
 .search{
+    color: white;
     text-align: center;
     padding-bottom: 50px;
 }
 
+.events{
+    padding: 20px;
+}
+
 /* Style event cards */
-.events {
+.event-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -70,8 +112,7 @@ header nav ul #title{
 }
 
 .event-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #eee;
     border-radius: 5px;
     margin: 10px;
     padding: 20px;
@@ -206,11 +247,13 @@ body {
     flex: 1; /* This makes the content take up the available space */
 }
 
+/* Footer */
 footer {
-    background: #333; /* Optional background color */
-    color: #fff; /* Optional text color */
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    margin-top: auto; /* Keeps footer at bottom */
 }
 
 .event_image{
@@ -218,4 +261,9 @@ footer {
     object-fit: cover;
 }
 
+@font-face {
+    font-family: rubikGlitch;
+    src: url('RubikGlitch-Regular.ttf');
+}
+  
 
