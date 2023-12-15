@@ -56,7 +56,7 @@ function populateEventCards(eventsData) {
         const eventLocation = document.createElement('p');
         eventLocation.textContent = `Location: ${event.venue.display_location}`; // Use the 'venue.display_location' field
 
-
+        const eventId = event.id
 
         // Append event details and image to the event card
         eventCard.appendChild(eventImage);
@@ -66,7 +66,7 @@ function populateEventCards(eventsData) {
 
         eventCard.addEventListener('click', function() {
             // Open the new page with the event details on button click
-            window.open(`event-details.html?title=${encodeURIComponent(event.title)}`, '_blank');
+            window.open(`event-details.html?id=${encodeURIComponent(eventId)}`, '_blank');
         });
 
         // Append the event card to the events section
@@ -203,4 +203,7 @@ checkFooterPosition();
 
 // Also call this function on window resize to handle dynamic changes in viewport size
 window.addEventListener('resize', checkFooterPosition);
+
+
+
 

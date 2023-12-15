@@ -37,10 +37,11 @@ header .logo {
 header .nav-links li {
     display: inline;
     margin-right: 20px;
+    font-family: rubikGlitch;
 }
 
 header .nav-links li :hover {
-    font-family: rubikGlitch;
+    color: #eee;
 }
 
 
@@ -62,6 +63,15 @@ header nav ul li a {
 
 header nav ul #title{
     text-align: right;
+}
+
+.textstyle {
+    border: 2px solid white; /* Adding a grey border */
+    font-weight: bold; /* Keeping font bold */
+    border-radius: 20px; /* Keeping border radius */
+    width: auto; /* Keeping auto-sizable width */
+    height: auto; /* Keeping auto-sizable height */
+    padding: 5px 30px 5px 30px; /* Keeping space around letters */
 }
 
 /* Style the hero section */
@@ -112,7 +122,7 @@ header nav ul #title{
 }
 
 .event-card {
-    background-color: #eee;
+    background-color: #f0f0f0;
     border-radius: 5px;
     margin: 10px;
     padding: 20px;
@@ -122,6 +132,11 @@ header nav ul #title{
 .event-card img {
     max-width: 100%;
     height: auto;
+}
+
+.event-card img :hover{
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden;
 }
 
 .event-card h2 {
